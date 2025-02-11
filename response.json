@@ -1,0 +1,38 @@
+{
+    "id": "cmpl-26fc4528c3da4dab8b1f93c9ff28fec9",
+    "object": "text_completion",
+    "created": 1739107114,
+    "model": "deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B",
+    "choices": [
+        {
+            "index": 0,
+            "text": " Company Searcher",
+            "logprobs": null,
+            "finish_reason": "stop",
+            "stop_reason": "</answer>",
+            "prompt_logprobs": null
+        },
+        {
+            "index": 1,
+            "text": " Company Searcher",
+            "logprobs": null,
+            "finish_reason": "stop",
+            "stop_reason": "</answer>",
+            "prompt_logprobs": null
+        },
+        {
+            "index": 2,
+            "text": " Company Searcher",
+            "logprobs": null,
+            "finish_reason": "stop",
+            "stop_reason": "</answer>",
+            "prompt_logprobs": null
+        }
+    ],
+    "usage": {
+        "prompt_tokens": 258,
+        "total_tokens": 276,
+        "completion_tokens": 18,
+        "prompt_tokens_details": null
+    }
+}
