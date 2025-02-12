@@ -57,18 +57,23 @@ vLLM installed and running locally
 5. **Upgrade the transformers library**:
    - Ensure compatibility by upgrading transformers:
      ```bash
-     pip install --upgrade transformers
+     pip install -r requirements.txt
      ```
 
 6. **Start the vLLM server with the DeepSeek-R1-Distill-Qwen-1.5B model**:
    - Launch the server specifying the model and configurations:
      ```bash
-     vllm serve deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B --max-model-len 4096
+     vllm serve deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B
      ```
+     You can tunne --max-model-len and other parameters for better performance, what I did was:
+     ```bash
+     vllm serve deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B --max-model-len 8192 --gpu-memory-utilization 0.95
+     ```
+     For more information, check vLLM documentation
 
 7. **Just hit main**
   - Or take a look in the GeneralPybook for better visualization of the different steps of the code.
 
 ## Tests
 
-Only one test unit was done. Not really a test unity but the Test_Analysis.ipbnb runs the test questions to the Agent Master, save the answers and calculates the % of concistent and correct answers. Also plots the correlation between the multiple agents, as one can assume, there might be a tendence of error between the LinkedIn Agents, for exemple. 
+Only one test unit was done. Not really a test unity script but the Test_Analysis.ipbnb runs the test questions to the Agent Master, save the answers and calculates the % of concistent and correct answers. Also plots the correlation between the multiple agents, as one can assume, there might be a tendence of error between the LinkedIn Agents, for exemple. 
