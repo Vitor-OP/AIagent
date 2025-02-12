@@ -24,7 +24,7 @@ Imagined Features:
 
 - ChatBot: A general-purpose assistant for answering user queries.
 
-##Installation
+## Installation
 
 Prerequisites
 
