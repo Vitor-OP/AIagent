@@ -17,7 +17,7 @@ class Agent:
         self.answer_prompt = None
         self.memory = {}
         
-    def update_agent_memory(self, dict_memory: dict):
+    def update_agent_memory(self, dict_memory):
         """
         Updates the agent's memory with the provided dictionary.
         Built to update the agent's memory with the MemoryMaster selected memories.
@@ -26,7 +26,7 @@ class Agent:
             dict_memory (dict): MemoryMaster.memory
             
         """
-        if dict_memory is not None:
+        if isinstance(dict_memory, dict):
             self.memory = dict_memory
 
     def send_payload_to_llm(self, payload: dict) -> list:
@@ -121,7 +121,6 @@ class MasterAgent(Agent):
         # Step 3: Generate answer prompt based on thinking response
         answer_prompt = self.answer_prompt_maker(thinking_prompt, thinking_response)
 
-
         # Step 4: Send the answer prompt to the LLM
         answer_payload = self.payload_giver(answer_prompt, "answer", n=n_answer, best_of=best_of_answer)
         
@@ -137,7 +136,9 @@ class MasterAgent(Agent):
 
             # Step 5: Call the selected agent. If not in the list, call the ChatBot
             if selected_agent_name in self.agents_names_dic:
-                return selected_agent_name
+                print(f"Agent {selected_agent_name} is not implemented yet")
+                # return selected_agent_name
+                return "Chat Bot" # For now, return the Chat Bot
             else:
                 return "Chat Bot"
 
@@ -287,9 +288,7 @@ class LinkedInConnector(Agent):
         super().__init__("LinkedIn Connector", "Expert in creating connecting messages for the user to send to the given person", API_URL)
 
     def process(self, user_prompt: str) -> str:
-        print(f"Calling LinkedIn Searcher on user and on connection target")
-        print(f"Creating connecting message for: {user_prompt}")
-        return f"Message to connect with {user_prompt} created successfully."
+        return f"LinkedIn Connector is not implemented yet"
 
 class LinkedInSearcher(Agent):
     """
@@ -302,8 +301,7 @@ class LinkedInSearcher(Agent):
         super().__init__("LinkedIn Searcher", "Expert in getting information of a person's LinkedIn", API_URL)
 
     def process(self, user_prompt: str) -> str:
-        print(f"Fetching LinkedIn data for: {user_prompt}")
-        return f"Fetching LinkedIn data for: {user_prompt}"
+        return f"LinkedIn Searcher is not implemented yet"
     
 class CompanySearcher(Agent):
     """
@@ -316,8 +314,7 @@ class CompanySearcher(Agent):
         super().__init__("Company Searcher", "Expert in getting precise and audited information of a company", API_URL)
 
     def process(self, user_prompt: str) -> str:
-        print(f"Fetching company data for: {user_prompt}")
-        return f"Fetching company data for: {user_prompt}"
+        return f"Company Searcher is not implemented yet"
     
 class NewsSearcher(Agent):
     """
@@ -329,8 +326,7 @@ class NewsSearcher(Agent):
         super().__init__("News Searcher", "Expert in getting the latest news from the internet that might be relevant to the user", API_URL)
 
     def process(self, user_prompt: str) -> str:
-        print(f"Fetching news data for: {user_prompt}")
-        return f"Fetching news data for: {user_prompt}"
+        return f"News Searcher is not implemented yet"
 
 class ChatBot(Agent):
     """
