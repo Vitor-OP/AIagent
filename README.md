@@ -18,7 +18,7 @@ Imagined Features:
 
 - LinkedInSearcher: Retrieves information about individuals from LinkedIn. (not implemented. I would implement it with simplicity in mind. Using Linkedin API if available or just some normal web scrapping)
 
-- CompanySearcher: Fetches company data using web scraping or APIs. (not implemented. Here I might still implemente when I have the time because it is a great opportunity to test crawl4ai + knowledge graph. It seems to be very effective with even very simple models)
+- CompanySearcher: Fetches company data using web scraping or APIs. (not implemented. This is a great opportunity to test crawl4ai + knowledge graph. It seems to be very effective with even very simple models such as the 1.5B deepseek)
 
 - NewsSearcher: Gathers relevant news articles from various sources. (not implemented. The same as the company searcher or just using news API)
 
